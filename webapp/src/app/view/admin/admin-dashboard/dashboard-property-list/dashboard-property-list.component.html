@@ -1,0 +1,12 @@
+<div class="container">
+    <h3><ng-content></ng-content></h3>
+    <div class="element" *ngFor="let property of properties" (click)="goToProperty(property.property.id)">
+        <div class="image-container"><img-loading [src]="property.property.pictures.length===0?'assets/placeholder.png':property.property.pictures[0].value"></img-loading></div>
+        <div class="name">
+            <div>{{property.property.name}}</div>
+            <div>{{property.property.propietary.name}} {{property.property.propietary.surname}}</div>
+        </div>
+        <div class="number">{{property.value|number:roundMode}} {{sufix}}</div>
+        <div class="profile-image-container"><img-loading [src]="property.property.propietary.picture??'assets/placeholder_profile.png'"></img-loading></div>
+    </div>
+</div>

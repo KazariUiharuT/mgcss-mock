@@ -1,0 +1,48 @@
+<h1>{{'SHARED.AUDIT' | translate}} {{audit.property.name}}</h1>
+<div class="container">
+    <fieldset>
+        <legend>{{'SHARED.TEXT' | translate}}</legend>
+        <div class="input-row">
+            <mat-form-field appearance="outline" class="field">
+                <mat-label>{{'SHARED.TEXT' | translate}}*</mat-label>
+                <textarea matInput [(ngModel)]="update.text"></textarea>
+            </mat-form-field>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>
+            <span>{{'SHARED.ATTACHMENTS' | translate}}</span>
+            <button mat-mini-fab color="accent" (click)="onAddAttachment()">
+                <mat-icon>add</mat-icon>
+            </button>
+        </legend>
+        <div class="attachment-list">
+            <div class="attachment" *ngFor="let attachment of audit.attachments; let i = index">
+                {{'SHARED.ATTACHMENT' | translate}} {{i+1}}
+                <button mat-icon-button color="accent" (click)="onOpenAtatchment(attachment.value)">
+                    <mat-icon>open_in_new</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" (click)="onRemoveAttachment(attachment)">
+                    <mat-icon>delete_forever</mat-icon>
+                </button>
+            </div>
+            <div class="attachment" *ngFor="let attachment of update.newAttachments; let i = index">
+                {{'SHARED.ATTACHMENT' | translate}} {{audit.attachments.length+i+1}}
+                <button mat-icon-button color="accent" (click)="onOpenAtatchment(attachment)">
+                    <mat-icon>open_in_new</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" (click)="onRemoveNewAttachment(i)">
+                    <mat-icon>delete_forever</mat-icon>
+                </button>
+            </div>
+        </div>
+    </fieldset>
+</div>
+<div class="btn-div">
+    <button mat-button color="warn" (click)="onCancel()">Cancelar</button>
+    <div>
+        <button mat-raised-button color="primary" (click)="onAccept()">Guardar</button>
+        <button mat-raised-button color="accent" (click)="onPublish()" *ngIf="audit.draft">Publicar</button>
+    </div>
+</div>

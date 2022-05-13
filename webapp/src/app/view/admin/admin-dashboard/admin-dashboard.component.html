@@ -1,0 +1,79 @@
+<fieldset>
+    <legend>{{'ADMIN.DASHBOARD.GENERAL' | translate}}</legend>
+    <div class="dataset">
+        <div><b>{{'ADMIN.DASHBOARD.AVG_ACCEPTED_REQUESTS_PER_LESSOR' | translate}}:</b>{{data.avgAcceptedRequestsPerLessor | number:'0.0-0'}}</div>
+        <div><b>{{'ADMIN.DASHBOARD.AVG_DENIED_REQUESTS_PER_LESSOR' | translate}}:</b>{{data.avgDeniedRequestsPerLessor | number:'0.0-0'}}</div>
+        <div><b>{{'ADMIN.DASHBOARD.AVG_ACCEPTED_REQUESTS_PER_TENANT' | translate}}:</b>{{data.avgAcceptedRequestsPerTenant | number:'0.0-0'}}</div>
+        <div><b>{{'ADMIN.DASHBOARD.AVG_DENIED_REQUESTS_PER_TENANT' | translate}}:</b>{{data.avgDeniedRequestsPerTenant | number:'0.0-0'}}</div>
+        <div class="list-row">
+          <dashboard-actor-list [actors]="data.lessorsWithMoreApprovedRequests">{{'ADMIN.DASHBOARD.LESSORS_WITH_MORE_APPROVED_REQUESTS' | translate}}:</dashboard-actor-list>
+          <dashboard-actor-list [actors]="data.lessorsWithMoreDeniedRequests">{{'ADMIN.DASHBOARD.LESSORS_WITH_MORE_DENIED_REQUESTS' | translate}}:</dashboard-actor-list>
+          <dashboard-actor-list [actors]="data.lessorsWithMorePendingRequests">{{'ADMIN.DASHBOARD.LESSORS_WITH_MORE_PENDING_REQUESTS' | translate}}:</dashboard-actor-list>
+          <dashboard-actor-list [actors]="data.tenantsWithMoreApprovedRequests">{{'ADMIN.DASHBOARD.TENANTS_WITH_MORE_APPROVED_REQUESTS' | translate}}:</dashboard-actor-list>
+          <dashboard-actor-list [actors]="data.tenantsWithMoreDeniedRequests">{{'ADMIN.DASHBOARD.TENANTS_WITH_MORE_DENIED_REQUESTS' | translate}}:</dashboard-actor-list>
+          <dashboard-actor-list [actors]="data.tenantsWithMorePendingRequests">{{'ADMIN.DASHBOARD.TENANTS_WITH_MORE_PENDING_REQUESTS' | translate}}:</dashboard-actor-list>
+      </div>
+      <div class="list-row">
+        <dashboard-actor-list [actors]="data.lessorsWithMoreApprovedRequestsRatio" roundMode="0.1-1" sufix="%">{{'ADMIN.DASHBOARD.LESSORS_WITH_MORE_APPROVED_REQUESTS_RATIO' | translate}}:</dashboard-actor-list>
+        <dashboard-actor-list [actors]="data.lessorsWithLessApprovedRequestsRatio" roundMode="0.1-1" sufix="%">{{'ADMIN.DASHBOARD.LESSORS_WITH_LESS_APPROVED_REQUESTS_RATIO' | translate}}:</dashboard-actor-list>
+      </div>
+      <div class="list-row">
+        <dashboard-actor-list [actors]="data.tenantsWithMoreApprovedRequestsRatio" roundMode="0.1-1" sufix="%">{{'ADMIN.DASHBOARD.TENANTS_WITH_MORE_APPROVED_REQUESTS_RATIO' | translate}}:</dashboard-actor-list>
+        <dashboard-actor-list [actors]="data.tenantsWithLessApprovedRequestsRatio" roundMode="0.1-1" sufix="%">{{'ADMIN.DASHBOARD.TENANTS_WITH_LESS_APPROVED_REQUESTS_RATIO' | translate}}:</dashboard-actor-list>
+      </div>
+      <div><b>{{'ADMIN.DASHBOARD.AVG_AUDITS_PER_PROPERTY' | translate}}:</b>{{data.avgAuditsPerProperty | number:'0.0-2'}}</div>
+      <div class="list-row">
+        <dashboard-property-list [properties]="data.propertiesWithMoreAudits">{{'ADMIN.DASHBOARD.PROPERTIES_WITH_MORE_AUDITS' | translate}}:</dashboard-property-list>
+        <dashboard-property-list [properties]="data.propertiesWithLessAudits">{{'ADMIN.DASHBOARD.PROPERTIES_WITH_LESS_AUDITS' | translate}}:</dashboard-property-list>
+      </div>
+      <div><b>{{'ADMIN.DASHBOARD.AVG_SOCIAL_IDENTITIES_PER_ACTOR' | translate}}:</b>{{data.avgSocialIdentitiesPerActor | number:'0.0-2'}}</div>
+      <div class="list-row">
+        <dashboard-actor-list [actors]="data.actorWithMoreSocialIdentities">{{'ADMIN.DASHBOARD.ACTOR_WITH_MORE_SOCIAL_IDENTITIES' | translate}}:</dashboard-actor-list>
+        <dashboard-actor-list [actors]="data.actorWithLessSocialIdentities">{{'ADMIN.DASHBOARD.ACTOR_WITH_LESS_SOCIAL_IDENTITIES' | translate}}:</dashboard-actor-list>
+      </div>
+      <div><b>{{'ADMIN.DASHBOARD.AVG_INVOICES_PER_TENANT' | translate}}:</b>{{data.avgInvoicesPerTenant | number:'0.0-2'}}</div>
+      <div class="list-row">
+        <dashboard-actor-list [actors]="data.tenantWithMoreInvoices">{{'ADMIN.DASHBOARD.TENANT_WITH_MORE_INVOICES' | translate}}:</dashboard-actor-list>
+        <dashboard-actor-list [actors]="data.tenantWithLessInvoices">{{'ADMIN.DASHBOARD.TENANT_WITH_LESS_INVOICES' | translate}}:</dashboard-actor-list>
+      </div>
+      <div><b>{{'ADMIN.DASHBOARD.TOTAL_MONEY_DUE_TO_SYSTEM' | translate}}:</b>{{data.totalMoneyDueToSystem | money}}</div>
+      <div><b>{{'ADMIN.DASHBOARD.AVG_REQUESTS_PER_PROPERTY_WITH_AUDITS' | translate}}:</b>{{data.avgRequestsPerPropertyWithAudits | number:'0.0-2'}}</div>
+      <div><b>{{'ADMIN.DASHBOARD.AVG_REQUESTS_PER_PROPERTY_WITHOUT_AUDITS' | translate}}:</b>{{data.avgRequestsPerPropertyWithoutAudits | number:'0.0-2'}}</div>
+    </div>
+</fieldset>
+
+<fieldset>
+    <legend>{{'ADMIN.DASHBOARD.LESSORS' | translate}}</legend>
+    <mat-form-field appearance="outline">
+        <mat-label>Lessor</mat-label>
+        <mat-select [(ngModel)]="lessorId" (selectionChange)="onLessorChange()">
+          <mat-option *ngFor="let lessor of lessors" [value]="lessor.id">
+            {{lessor.name}} {{lessor.surname}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="dataset" *ngIf="dataLessor">
+        <div class="list-row">
+          <dashboard-property-list [properties]="dataLessor.propertiesWithAuditCount">{{'ADMIN.DASHBOARD.PROPERTIES_WITH_AUDIT_COUNT' | translate}}:</dashboard-property-list>
+          <dashboard-property-list [properties]="dataLessor.propertiesWithRequestCount">{{'ADMIN.DASHBOARD.PROPERTIES_WITH_REQUEST_COUNT' | translate}}:</dashboard-property-list>
+        </div>
+        <div class="list-row">
+          <dashboard-property-list [properties]="dataLessor.propertiesWithApprovedRequestCount">{{'ADMIN.DASHBOARD.PROPERTIES_WITH_APPROVED_REQUEST_COUNT' | translate}}:</dashboard-property-list>
+          <dashboard-property-list [properties]="dataLessor.propertiesWithDeniedRequestCount">{{'ADMIN.DASHBOARD.PROPERTIES_WITH_DENIED_REQUEST_COUNT' | translate}}:</dashboard-property-list>
+          <dashboard-property-list [properties]="dataLessor.propertiesWithPendingRequestCount">{{'ADMIN.DASHBOARD.PROPERTIES_WITH_PENDING_REQUEST_COUNT' | translate}}:</dashboard-property-list>
+        </div>
+      </div>
+</fieldset>
+
+<fieldset>
+    <legend>{{'ADMIN.DASHBOARD.JPQLTEST' | translate}}</legend>
+    <div class="test-row">
+        <mat-form-field appearance="outline" class="field">
+            <mat-label>{{'ADMIN.DASHBOARD.JPQLQUERY' | translate}}</mat-label>
+            <textarea matInput [(ngModel)]="testQLquery"></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="testQL()">{{'ADMIN.DASHBOARD.JPQLEXECUTE' | translate}}</button>
+    </div>
+    <pre *ngIf="testQLerror !== null">{{testQLerror | json}}</pre>
+    <pre *ngIf="testQLresult !== null">{{testQLresult | json}}</pre>
+</fieldset>

@@ -1,0 +1,11 @@
+fieldset {
+    margin: 10px;
+}
+
+.input-row {
+    align-items: center;
+}
+
+.input-row > *:last-child {
+    flex: unset;
+}

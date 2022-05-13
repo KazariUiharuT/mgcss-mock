@@ -1,0 +1,72 @@
+<fieldset>
+    <legend>{{'PROFILE.PERSONAL' | translate}}</legend>
+    <div class="input-row">
+        <div class="profile-pic">
+            <div class="profile-image-container">
+                <img-loading [src]="newPicture??(actor.picture??'assets/placeholder_profile.png')"></img-loading>
+            </div>
+            <icon-button icon="file_upload" (click)="onChangePic()">
+                <span text *ngIf="actor.picture || newPicture">{{'PROFILE.IMGUPDATE' | translate}}</span>
+                <span text *ngIf="!(actor.picture || newPicture)">{{'PROFILE.IMGNEW' | translate}}</span>
+            </icon-button>
+        </div>
+    </div>
+    <div class="input-row">
+        <mat-form-field appearance="outline">
+            <mat-label>{{'SHARED.NAME' | translate}}</mat-label>
+            <input matInput [(ngModel)]="actor.name">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>{{'SHARED.SURNAME' | translate}}</mat-label>
+            <input matInput [(ngModel)]="actor.surname">
+        </mat-form-field>
+    </div>
+    <div class="input-row">
+        <search-selector [(item)]="prefix" [items]="prefixes" label="{{'SHARED.PREFIX' | translate}}" emptyText="{{'SHARED.NOPREFIX' | translate}}"></search-selector>
+        <mat-form-field appearance="outline">
+            <mat-label>{{'SHARED.PHONE' | translate}}</mat-label>
+            <input matInput [(ngModel)]="actor.phone.number">
+        </mat-form-field>
+    </div>
+</fieldset>
+<fieldset>
+    <legend>
+        <span>{{'SOCIAL.SOCIAL' | translate}}</span>
+        <button mat-mini-fab color="primary" (click)="onAddSocial()">
+            <mat-icon>add</mat-icon>
+        </button>
+    </legend>
+    <div class="social-container">
+        <div *ngFor="let social of updatedSocials" class="social-row">
+            <div>
+                <span>{{social.socialNetwork}}</span>
+                <div>
+                    <button mat-mini-fab color="primary" (click)="onUpdateSocial(social)" [disabled]="!social.unsaved">
+                        <mat-icon>save</mat-icon>
+                    </button>
+                    <button mat-mini-fab color="primary" (click)="onRemoveSocial(social)">
+                        <mat-icon>delete_forever</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="input-row">
+                <mat-form-field appearance="outline">
+                    <mat-label>{{'SOCIAL.NICK' | translate}}</mat-label>
+                    <input matInput [(ngModel)]="social.nick" (change)="social.unsaved=true">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>{{'SOCIAL.Url' | translate}}</mat-label>
+                    <input matInput [(ngModel)]="social.url" (change)="social.unsaved=true">
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <div class="btn-div">
+        <icon-button (click)="onExit()">
+            <span text>{{'SHARED.EXIT' | translate}}</span>
+        </icon-button>
+        <icon-button icon="save" (click)="onSave()">
+            <span text>{{'SHARED.SAVE' | translate}}</span>
+        </icon-button>
+    </div>
+</fieldset>

@@ -1,0 +1,49 @@
+<h2>{{'SHARED.USERS.USER' | translate}} {{'SHARED.USERS.'+(actor.type??"ACTOR") | uppercase | translate}}</h2>
+<div><b>{{'SHARED.NAME' | translate}}:</b> {{actor.name}}</div>
+<div><b>{{'SHARED.SURNAME' | translate}}:</b> {{actor.surname}}</div>
+<div *ngIf="actor.phone"><b>{{'SHARED.PHONE' | translate}}:</b> {{actor.phone | phone}}</div>
+<div><b>{{'SHARED.EMAIL' | translate}}:</b> {{actor.email}}</div>
+
+<div class="btn-div">
+    <icon-button icon="edit" (click)="onEdit.emit()" *ngIf="mySelf">
+        <span text>{{'SHARED.EDIT' | translate}}</span>
+    </icon-button>
+    <icon-button icon="logout" color="warn" (click)="signOut()" *ngIf="mySelf">
+        <span text>{{'SHARED.TOPBAR.LOGOUT' | translate}}</span>
+    </icon-button>
+</div>
+
+<div *ngIf="actor.type === 'lessor' || actor.type === 'tenant'">
+    <h2>{{'SHARED.COMMENTS' | translate}}:</h2>
+    <div class="comment-container">
+        <div class="comment" *ngFor="let comment of comments">
+            <div class="author">
+                <div class="profile-image-container"><img-loading [src]="comment.author.picture??'assets/placeholder_profile.png'"></img-loading></div>
+                <div class="name">{{comment.author.name}} {{comment.author.surname}}</div>
+            </div>
+            <div class="title">{{comment.title}}</div>
+            <div class="text">{{comment.text}}</div>
+            <div class="footer">
+                <stars-display [stars]="comment.stars"></stars-display>
+                <div class="date">{{comment.date | date}}</div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="myTipe === 'lessor' || myTipe === 'tenant'" class="send-comment">
+        <h3>{{'COMMENT.MAKE' | translate}}</h3>
+        <mat-form-field appearance="outline">
+            <mat-label>{{'COMMENT.TITLE' | translate}}</mat-label>
+            <input matInput [(ngModel)]="newComment.title">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>{{'COMMENT.COMMENT' | translate}}</mat-label>
+            <textarea matInput [(ngModel)]="newComment.text"></textarea>
+        </mat-form-field>
+        <div class="btn-div">
+            <stars-input [(stars)]="newComment.stars"></stars-input>
+            <icon-button icon="send" (click)="sendComment()">
+                <span text>{{'COMMENT.SEND' | translate}}</span>
+            </icon-button>
+        </div>
+    </div>
+</div>

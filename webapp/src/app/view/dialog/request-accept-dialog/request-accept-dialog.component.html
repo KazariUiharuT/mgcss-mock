@@ -1,0 +1,39 @@
+<h2>{{'REQUEST.ACCEPT' | translate}}</h2>
+<h4>{{'REQUEST.CREDITCARDNOTICE' | translate}}</h4>
+<div class="reuse-div" *ngIf="this.storedCreditCard !== null">
+    <mat-slide-toggle [(ngModel)]="reuse">{{'REQUEST.REUSE' | translate}}</mat-slide-toggle>
+</div>
+<div class="creditcard" *ngIf="reuse">
+    <div><b>{{'REQUEST.CREDITCARD.NUMBER' | translate}}:</b> {{storedCreditCard?.number}}</div>
+    <div><b>{{'REQUEST.CREDITCARD.EXPIRACY' | translate}}:</b> {{storedCreditCard?.expiracyMonth}}/{{storedCreditCard?.expiracyYear}}</div>
+    <div><b>{{'REQUEST.CREDITCARD.CVV' | translate}}:</b> {{storedCreditCard?.cvv}}</div>
+</div>
+<div class="creditcard" *ngIf="!reuse">
+    <div class="input-row">
+        <mat-form-field appearance="outline">
+            <mat-label>{{'REQUEST.CREDITCARD.NUMBER' | translate}}*</mat-label>
+            <input matInput [(ngModel)]="newCreditCard.number" id="input_ccnumber">
+        </mat-form-field>
+    </div>
+    <label>{{'REQUEST.CREDITCARD.EXPIRACY' | translate}}</label>
+    <div class="input-row">
+        <mat-form-field appearance="outline">
+            <mat-label>{{'SHARED.MONTH' | translate}}*</mat-label>
+            <input matInput type="number" [(ngModel)]="newCreditCard.expiracyMonth">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>{{'SHARED.YEAR' | translate}}*</mat-label>
+            <input matInput type="number" [(ngModel)]="newCreditCard.expiracyYear">
+        </mat-form-field>
+    </div>
+    <div class="input-row">
+        <mat-form-field appearance="outline">
+            <mat-label>{{'REQUEST.CREDITCARD.CVV' | translate}}*</mat-label>
+            <input matInput [(ngModel)]="newCreditCard.cvv">
+        </mat-form-field>
+    </div>
+</div>
+<div class="btn-div">
+    <button mat-button color="warn" (click)="onCancel()">{{'SHARED.CANCEL' | translate}}</button>
+    <button mat-raised-button color="accent" (click)="onAccept()">{{'SHARED.ACCEPT' | translate}}</button>
+</div>

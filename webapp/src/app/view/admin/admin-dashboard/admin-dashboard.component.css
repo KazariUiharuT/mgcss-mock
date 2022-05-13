@@ -1,0 +1,30 @@
+fieldset {
+    margin: 10px;
+}
+
+.test-row {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    gap: 10px;
+}
+.test-row > *:first-child {
+    flex: 1;
+}
+
+.dataset b {
+    margin-right: 5px;
+}
+
+.list-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 10px 0;
+}
+.list-row > * {
+    flex: 1;
+    min-width: 300px;
+}

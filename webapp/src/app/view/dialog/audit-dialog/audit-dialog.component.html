@@ -1,0 +1,20 @@
+<div class="author">
+    <div class="profile-image-container"><img-loading [src]="audit.author.picture??'assets/placeholder_profile.png'"></img-loading></div>
+    <div>
+        <div class="description">{{audit.author.name}} {{audit.author.surname}}</div>
+        <div class="company">{{audit.author.company}}</div>
+    </div>
+</div>
+<p>{{audit.text}}</p>
+<div class="attachments">
+    <icon-button icon="file_download" (click)="onDownloadAttachment(attachment)" *ngFor="let attachment of audit.attachments; let i = index">
+        <span text>Adjunto {{i+1}}</span>
+    </icon-button>
+</div>
+<div class="date">{{audit.date | date:'dd/MM/yyyy'}}</div>
+<div class="btn-div">
+    <button mat-button color="warn" (click)="onClose()">{{'SHARED.CLOSE' | translate}}</button>
+    <icon-button icon="edit" (click)="onEdit()" *ngIf="mine" [disabled]="!audit.draft">
+        <span text>{{'SHARED.EDIT' | translate}}</span>
+    </icon-button>
+</div>

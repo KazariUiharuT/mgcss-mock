@@ -1,0 +1,37 @@
+<div class="request-list">
+    <div class="request" *ngFor="let request of requests">
+        <div class="actor" *ngIf="myId === request.property.propietary.id" (click)="goToProfile(request.tenant.id)">
+            <div class="profile-image-container"><img-loading [src]="request.tenant.picture??'assets/placeholder_profile.png'"></img-loading></div>
+            <div class="name">{{request.tenant.name}} {{request.tenant.surname}}</div>
+        </div>
+        <div class="actor" *ngIf="myId === request.tenant.id" (click)="goToProfile(request.property.propietary.id)">
+            <div class="profile-image-container"><img-loading [src]="request.property.propietary.picture??'assets/placeholder_profile.png'"></img-loading></div>
+            <div class="name">{{request.property.propietary.name}} {{request.property.propietary.surname}}</div>
+        </div>
+        <div class="property">
+            <img-loading [src]="request.property.pictures[0]?.value??'assets/placeholder.png'"></img-loading>
+            <div>
+                <div><b>{{'SHARED.PROPERTY' | translate}}:</b> {{request.property.name}}</div>
+                <div><b>{{'REQUEST.CHECKIN' | translate}}:</b> {{request.checkIn | date:'dd/MM/yyyy'}}</div>
+                <div><b>{{'REQUEST.CHECKOUT' | translate}}:</b> {{request.checkOut | date:'dd/MM/yyyy'}}</div>
+                <div><b>{{'REQUEST.TOTALDAYS' | translate}}:</b> {{request.ndays}}</div>
+                <div><b>{{'REQUEST.ISSMOKER' | translate}}:</b> {{'SHARED.'+(request.smoker?'YES':'NO') | translate}}</div>
+                <div><b>{{'SHARED.STATUS' | translate}}:</b><span [style.color]="REQUEST_STATUS[request.status].color"> {{'REQUEST.STATE.'+request.status | uppercase | translate}}</span></div>
+            </div>
+        </div>
+        <div class="btn-div">
+            <icon-button icon="check" color="accent" (click)="onAccept(request)" *ngIf="request.status === 'PENDING' && myId === request.property.propietary.id">
+                <span text>{{'SHARED.ACCEPT' | translate}}</span>
+            </icon-button>
+            <icon-button icon="close" color="warn" (click)="onReject(request)" *ngIf="request.status === 'PENDING' && myId === request.property.propietary.id">
+                <span text>{{'SHARED.REJECT' | translate}}</span>
+            </icon-button>
+            <icon-button icon="check" (click)="onGenerateInvoice(request)" *ngIf="request.status === 'ACCEPTED' && request.invoice === null && myId === request.tenant.id">
+                <span text>{{'INVOICE.MAKE' | translate}}</span>
+            </icon-button>
+            <icon-button icon="check" (click)="onOpenInvoice(request)" *ngIf="request.status === 'ACCEPTED' && request.invoice !== null && myId === request.tenant.id">
+                <span text>{{'INVOICE.VIEW' | translate}}</span>
+            </icon-button>
+        </div>
+    </div>
+</div>

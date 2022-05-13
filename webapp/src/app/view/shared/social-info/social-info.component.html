@@ -1,0 +1,14 @@
+<div class="box-wrapper">
+    <div class="title">Redes sociales</div>
+    <mat-divider class="divider"></mat-divider>
+    <div class="social-container">
+        <div class="social" *ngFor="let social of socials" (click)="openSocial(social)">
+            <div class="social-center">
+                <div>[{{social.socialNetwork}}]</div>
+                <div>{{social.nick}}</div>
+            </div>
+            <mat-icon>chevron_right</mat-icon>
+        </div>
+    </div>
+    <empty-message *ngIf="socials.length === 0">{{'SOCIAL.EMPTY' | translate}}</empty-message>
+</div>

@@ -1,0 +1,35 @@
+<h2>{{'ADMIN.AUDITOR.REGISTER' | translate}}</h2>
+<div class="input-row">
+    <mat-form-field appearance="outline" class="field">
+        <mat-label>{{'SHARED.NAME' | translate}}*</mat-label>
+        <textarea matInput [(ngModel)]="auditor.name"></textarea>
+    </mat-form-field>
+</div>
+<div class="input-row">
+    <mat-form-field appearance="outline" class="field">
+        <mat-label>{{'SHARED.SURNAME' | translate}}*</mat-label>
+        <textarea matInput [(ngModel)]="auditor.surname"></textarea>
+    </mat-form-field>
+</div>
+<div class="input-row">
+    <mat-form-field appearance="outline" class="field">
+        <mat-label>{{'SHARED.EMAIL' | translate}}*</mat-label>
+        <textarea matInput [(ngModel)]="auditor.email"></textarea>
+    </mat-form-field>
+</div>
+<div class="input-row">
+    <mat-form-field appearance="outline" class="field">
+        <mat-label>{{'SHARED.COMPANY' | translate}}*</mat-label>
+        <textarea matInput [(ngModel)]="auditor.company"></textarea>
+    </mat-form-field>
+</div>
+<div class="input-row">
+    <mat-form-field appearance="outline" class="field">
+        <mat-label>{{'SHARED.PASSWORD' | translate}}*</mat-label>
+        <textarea matInput [(ngModel)]="auditor.pwd"></textarea>
+    </mat-form-field>
+</div>
+<div class="btn-div">
+    <button mat-button color="warn" (click)="onCancel()">{{'SHARED.CANCEL' | translate}}</button>
+    <button mat-raised-button color="primary" (click)="onAccept()">{{'SHARED.REGISTER' | translate}}</button>
+</div>

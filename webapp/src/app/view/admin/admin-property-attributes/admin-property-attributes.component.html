@@ -1,0 +1,25 @@
+<fieldset>
+    <legend>
+        <span>{{'ADMIN.ATTRIBUTES' | translate}}</span>
+        <div class="example-button-container">
+            <button mat-mini-fab color="accent" (click)="onCreate()">
+                <mat-icon>add</mat-icon>
+            </button>
+        </div>
+    </legend>
+    <div class="input-row" *ngFor="let attribute of attributes">
+        <mat-form-field appearance="outline">
+            <mat-label>{{'SHARED.NAME' | translate}}</mat-label>
+            <input matInput [(ngModel)]="attribute.name" [readonly]="attribute.sysDefault">
+        </mat-form-field>
+        <div class="icon" [style.visibility]="attribute.sysDefault?'hidden':'visible'">
+            <button mat-icon-button color="primary" (click)="onUpdate(attribute)"
+                [disabled]="attribute.name === lastAttributes[attribute.id]">
+                <mat-icon>save</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="onDelete(attribute)">
+                <mat-icon>delete_forever</mat-icon>
+            </button>
+        </div>
+    </div>
+</fieldset>

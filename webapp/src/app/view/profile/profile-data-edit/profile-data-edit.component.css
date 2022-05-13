@@ -1,0 +1,51 @@
+fieldset {
+    margin: 1rem 0.5rem;
+}
+
+.profile-image-container {
+    height: 150px;
+    width: 150px;
+}
+.profile-pic {
+    margin: 0.5rem 0 1rem 0;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+legend {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.social-row {
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.social-row > div:first-child {
+    display: flex;
+    justify-content: space-between;
+}
+.social-row > div:first-child > span {
+    font-size: 120%;
+}
+.social-row > div:first-child > div {
+    display: flex;
+    gap: 5px;
+}
+
+.btn-div {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}

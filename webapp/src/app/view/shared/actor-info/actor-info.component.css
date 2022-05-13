@@ -1,0 +1,21 @@
+.box-wrapper {
+    cursor: pointer;
+    transition: 0.2s;
+}
+.box-wrapper:hover {
+    transform: scale(1.05);
+}
+.name-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: center;
+    gap: 5px;
+}
+.name-center-column {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}

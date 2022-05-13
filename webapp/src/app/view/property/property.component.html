@@ -1,0 +1,60 @@
+<div class="content-wapper">
+    <div class="container column-phone-row-desktop">
+        <div class="main-col">
+            <ngb-carousel *ngIf="images">
+                <ng-template ngbSlide *ngFor="let image of images">
+                    <div class="picsum-img-wrapper">
+                        <img [src]="image">
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+            <div class="buttons-div">
+                <icon-button icon="edit" (click)="onUpdate()" *ngIf="mine">
+                    <span text>{{'SHARED.EDIT' | translate}}</span>
+                </icon-button>
+                <icon-button (click)="onCreateAudit()" *ngIf="userType === 'auditor'">
+                    <span text>{{'AUDIT.MAKE' | translate}}</span>
+                </icon-button>
+                <icon-button (click)="onCreateRequest()" *ngIf="userType === 'tenant'">
+                    <span text>{{'REQUEST.MAKE' | translate}}</span>
+                </icon-button>
+            </div>
+            <div class="details box-wrapper">
+                <div class="title">
+                    <span>{{property.name}}</span>
+                    <span>{{property.rate|money:'rate'}}</span>
+                </div>
+                <div class="location">
+                    <mat-icon>place</mat-icon>{{property.address}}, {{province}}, {{city}}, {{state}}, {{country}}
+                </div>
+                <div class="description">{{property.description}}</div>
+                <div class="attributes">
+                    <div *ngFor="let attribute of property.attributes">
+                        <b>{{attribute.attribute.name}}: </b> {{attribute.value}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="side-col">
+            <actor-info [actor]="property.propietary"></actor-info>
+            <div class="box-wrapper">
+                <div class="title">{{'PROPERTY.STADISTICS' | translate}}</div>
+                <mat-divider class="divider"></mat-divider>
+                <div><b>{{'SHARED.REQUESTS' | translate}}: </b>{{property.nrequests | number}}</div>
+                <div><b>{{'SHARED.AUDITS' | translate}}: </b>{{property.naudits | number}}</div>
+            </div>
+            <div class="box-wrapper">
+                <div class="title">{{'SHARED.AUDITS' | translate}}</div>
+                <mat-divider class="divider"></mat-divider>
+                <div class="audit" *ngFor="let audit of audits" (click)="onOpenAudit(audit)">
+                    <div class="profile-image-container"><img-loading [src]="audit.author.picture??'assets/placeholder_profile.png'"></img-loading></div>
+                    <div class="audit-center">
+                        <div class="description">{{audit.author.name}} {{audit.author.surname}}</div>
+                        <div class="date">{{audit.date | date:'dd/MM/yyyy'}}</div>
+                    </div>
+                </div>
+                <empty-message *ngIf="audits.length === 0">{{'AUDIT.EMPTY' | translate}}</empty-message>
+            </div>
+        </div>
+    </div>
+</div>

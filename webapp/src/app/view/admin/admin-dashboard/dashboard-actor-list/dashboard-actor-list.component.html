@@ -1,0 +1,8 @@
+<div class="container">
+    <h3><ng-content></ng-content></h3>
+    <div class="element" *ngFor="let actor of actors" (click)="goToActor(actor.actor.id)">
+        <div class="profile-image-container"><img-loading [src]="actor.actor.picture??'assets/placeholder_profile.png'"></img-loading></div>
+        <div class="name">{{actor.actor.name}} {{actor.actor.surname}}</div>
+        <div class="number">{{actor.value|number:roundMode}} {{sufix}}</div>
+    </div>
+</div>

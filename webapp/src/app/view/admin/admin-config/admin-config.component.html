@@ -1,0 +1,14 @@
+<fieldset>
+    <legend>{{'ADMIN.SYSVARS' | translate}}</legend>
+    <div class="input-row" *ngFor="let config of sysConfigs">
+        <mat-form-field appearance="outline">
+            <mat-label>{{CONFIG_NAME[config.name]}}</mat-label>
+            <input matInput [(ngModel)]="config.value">
+        </mat-form-field>
+        <div class="icon">
+            <button mat-icon-button color="primary" (click)="updateVariable(config)" [disabled]="config.value === lastSysConfigs[config.name]">
+                <mat-icon>save</mat-icon>
+            </button>
+        </div>
+    </div>
+</fieldset>

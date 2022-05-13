@@ -1,0 +1,5 @@
+<mat-icon 
+*ngFor="let i of [0, 1, 2, 3, 4]"
+[style.color]="(stars-i)>0.4?'gold':'dimgray'">
+{{(stars-i)>0.8?'star':((stars-i)>0.4?'star_half':'star')}}
+</mat-icon>

@@ -1,0 +1,20 @@
+<div class="bar">
+    <img src="assets/img/logo.png" class="hidden-on-phone" (click)="onGoToHome()">
+    <img src="assets/img/icon.png" class="hidden-on-desktop" (click)="onGoToHome()">
+    <div class="right-buttons">
+        <img src="assets/flags/es.png" (click)="setLang('es')" [class.selected]="lang==='es'" class="flag">
+        <img src="assets/flags/gb.png" (click)="setLang('en')" [class.selected]="lang==='en'" class="flag">
+        <icon-button icon="admin_panel_settings" (click)="onGoToAdminPanel()" *ngIf="userType === 'admin'" [hideTextOnPhone]="true">
+            <span text>{{'SHARED.TOPBAR.ADMIN' | translate}}</span>
+        </icon-button>
+        <icon-button icon="person" (click)="onGoToProfile()" *ngIf="userType !== 'guest'" [hideTextOnPhone]="true">
+            <span text>{{'SHARED.TOPBAR.PROFILE' | translate}}</span>
+        </icon-button>
+        <icon-button icon="app_registration" (click)="onOpenRegister()" *ngIf="userType === 'guest'" [hideTextOnPhone]="true">
+            <span text>{{'SHARED.TOPBAR.SIGNIN' | translate}}</span>
+        </icon-button>
+        <icon-button icon="login" (click)="onOpenLogin()" *ngIf="userType === 'guest'" [hideTextOnPhone]="true">
+            <span text>{{'SHARED.TOPBAR.LOGIN' | translate}}</span>
+        </icon-button>
+    </div>
+</div>

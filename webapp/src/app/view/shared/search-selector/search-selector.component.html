@@ -1,0 +1,14 @@
+<form [formGroup]="itemGroup"> 
+    <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label>{{label}}</mat-label>
+        <mat-select formControlName="itemCtrl" #itemSelect name="item">
+          <mat-option>
+            <ngx-mat-select-search formControlName="itemFilterCtrl" [placeholderLabel]="label" [noEntriesFoundLabel]="emptyText"></ngx-mat-select-search>
+          </mat-option>
+          <mat-option *ngFor="let item of filteredItems | async" [value]="item">
+            {{item.text}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+</form>
+  

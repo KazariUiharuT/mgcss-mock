@@ -1,0 +1,68 @@
+h2 {
+    margin-top: 1rem;
+}
+
+.btn-div {
+    padding-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.comment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+.comment .author {
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+.comment .author .name {
+    flex: 1;
+}
+.comment .title {
+    font-size: 1.1rem;
+}
+.comment .footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+.comment .footer .date {
+    font-size: 90%;
+    color: dimgray;
+}
+
+.send-comment{
+    margin-top: 1rem;
+    padding: 10px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+.send-comment > *:not(:first-child) {
+    width: 100%;
+    margin-top: -15px;
+}
+.send-comment > .btn-div {
+    margin-top: -25px;
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,37 @@
+.author{
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    padding: 5px;
+    background-color: lightyellow;
+    border-radius: 0.5rem;
+    border: 1px solid lightgrey;
+    transition: 0.2s;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+.company {
+    color: gray;
+    font-size: 95%;
+}
+
+.date {
+    text-align: end;
+    font-size: 90%;
+    color: gray;
+}
+
+.attachments {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+
+}
+
+.btn-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}

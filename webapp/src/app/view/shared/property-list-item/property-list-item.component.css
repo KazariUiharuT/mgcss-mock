@@ -1,0 +1,53 @@
+.card {
+    max-width: 80vw;
+    width: 280px;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+    border-radius: 2rem;
+    overflow: hidden;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.card > img {
+    width: 100%;
+    height: auto;
+}
+.card-content {
+    padding: 0.5rem 1rem;
+}
+.card-content .title {
+    font-size: 150%;
+    margin-bottom: 0.2rem;
+}
+.card-content .rate {
+    font-size: 125%;
+    color: dimgray;
+}
+.card-content .place {
+    color: gray;
+}
+.card-content .place::before {
+    font-family: 'Material Icons';
+    content: "place";
+    font-feature-settings: 'liga';
+    font-size: 20px;
+    vertical-align: -20%;
+}
+.card-content .description {
+    margin: 0.5rem 0;
+}
+.card-content .stats-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.btn-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 5px;
+}

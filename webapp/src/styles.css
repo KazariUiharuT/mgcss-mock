@@ -1,0 +1,82 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.hidden-on-phone {
+    display: none;
+}
+.hidden-on-desktop {
+    display: block;
+}
+.column-phone-row-desktop {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+    .hidden-on-phone {
+        display: block;
+    }
+    .hidden-on-desktop {
+        display: none;
+    }
+    .column-phone-row-desktop {
+        flex-direction: row;
+    }
+}
+
+.content-wapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.content-wapper > * {
+    max-width: 950px;
+    width: 100%;
+}
+
+.box-wrapper {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    border: 1px solid dimgray;
+    padding: 5px;
+}
+.divider {
+    margin: 0.5rem 0!important;
+}
+
+.profile-image-container {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.input-row {
+    display:  flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+.input-row > * {
+    flex: 1;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

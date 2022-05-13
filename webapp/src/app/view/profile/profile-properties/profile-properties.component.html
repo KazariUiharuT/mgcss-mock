@@ -1,0 +1,6 @@
+<div class="btn-div">
+    <icon-button icon="add" (click)="onCreateProperty()" *ngIf="mySelf">
+        <span text>{{'PROPERTY.MAKE' | translate}}</span>
+    </icon-button>
+</div>
+<property-list [properties]="properties"></property-list>

@@ -1,0 +1,29 @@
+
+<fieldset>
+    <legend>
+        <span>{{'ADMIN.AUDITORS' | translate}}</span>
+        <div class="example-button-container">
+            <button mat-mini-fab color="accent" (click)="onCreate()">
+                <mat-icon>add</mat-icon>
+            </button>
+        </div>
+    </legend>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>{{'SHARED.NAME' | translate}}</th>
+                <th>{{'SHARED.SURNAME' | translate}}</th>
+                <th>{{'SHARED.EMAIL' | translate}}</th>
+                <th>{{'ADMIN.AUDITOR.COMPANY' | translate}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let auditor of auditors">
+                <td>{{auditor.name}}</td>
+                <td>{{auditor.surname}}</td>
+                <td>{{auditor.email}}</td>
+                <td>{{auditor.company}}</td>
+            </tr>
+        </tbody>
+    </table>
+</fieldset>

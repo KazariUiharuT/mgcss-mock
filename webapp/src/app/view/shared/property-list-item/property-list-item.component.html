@@ -1,0 +1,18 @@
+<div class="card" (click)="onGoToProperty()">
+    <img-loading [src]="property.pictures[0].value" *ngIf="property.pictures.length > 0"></img-loading>
+    <img-loading src="assets/placeholder.png" *ngIf="property.pictures.length === 0"></img-loading>
+    <div class="card-content">
+        <div class="title">{{property.name}}</div>
+        <div class="rate">{{property.rate | money:'rate'}}</div>
+        <div class="place">{{property.address}}</div>
+        <div class="description">{{property.description | charLimit:100}}</div>
+        <div class="stats-row">
+            <span>{{property.nrequests | number}} {{'SHARED.REQUEST'+(property.nrequests===1?'':'S') | translate}}</span>
+            <span>{{property.naudits | number}}  {{'SHARED.AUDIT'+(property.naudits===1?'':'S') | translate}}</span>
+        </div>
+        <div class="btn-div" *ngIf="mine">
+            <button mat-raised-button color="warn" (click)="onDelete($event)"><mat-icon>delete_forever</mat-icon></button>
+            <button mat-raised-button color="primary" (click)="onUpdate($event)"><mat-icon>edit</mat-icon></button>
+        </div>
+    </div>
+</div>

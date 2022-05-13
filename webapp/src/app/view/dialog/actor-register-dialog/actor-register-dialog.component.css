@@ -1,0 +1,14 @@
+
+legend{
+    font-size: 130%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}

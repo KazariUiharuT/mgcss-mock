@@ -1,0 +1,35 @@
+.bar {
+    background-color: #333;
+    color: #fff;
+    padding: 2px 10px;
+    font-size: 15px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bar > img {
+    height: 80%;
+    width: auto;
+    cursor: pointer;
+}
+
+.right-buttons {
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.flag {
+    height: 35px;
+    border: 2px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    filter: saturate(0);
+}
+
+.selected {
+    filter: saturate(1)!important;
+    border: 2px solid cyan!important;
+}

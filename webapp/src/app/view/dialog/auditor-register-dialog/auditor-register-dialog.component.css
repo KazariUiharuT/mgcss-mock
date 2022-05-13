@@ -1,0 +1,6 @@
+.button-div{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 10px;
+}

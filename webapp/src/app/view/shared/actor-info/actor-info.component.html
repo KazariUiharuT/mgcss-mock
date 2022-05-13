@@ -1,0 +1,15 @@
+<div class="box-wrapper" (click)="onGoToProfile()">
+    <div class="name-row">
+        <div class="profile-image-container"><img-loading [src]="actor.picture??'assets/placeholder_profile.png'"></img-loading></div>
+        <div class="name-center-column">
+            <span>{{actor.name}} {{actor.surname}}</span>
+            <div *ngIf="actor.type === 'lessor' || actor.type === 'tenant'">
+                <stars-display [stars]="actor.stars"></stars-display>
+            </div>
+        </div>
+        <mat-icon>chevron_right</mat-icon>
+    </div>
+    <mat-divider class="divider"></mat-divider>
+    <div *ngIf="actor.phone"><b>{{'SHARED.PHONE' | translate}}:</b> {{actor.phone|phone}}</div>
+    <div><b>{{'SHARED.EMAIL' | translate}}:</b> {{actor.email}}</div>
+</div>

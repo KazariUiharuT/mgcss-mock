@@ -1,0 +1,40 @@
+.audit-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 1rem;
+}
+.audit {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 0.5rem;
+    gap: 10px;
+}
+.audit > div:first-child{
+    flex: 1;
+}
+.audit > div:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.audit > div > .date{
+    font-size: 120%;
+}
+.audit > div > .date{
+    color: gray;
+    font-size: 90%;
+    text-align: right;
+}
+.audit > .btn-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

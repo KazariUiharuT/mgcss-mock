@@ -1,0 +1,16 @@
+<button mat-raised-button color="primary" [disabled]="disabled" *ngIf="color === 'primary'">
+    <ng-container *ngTemplateOutlet="text"></ng-container>
+</button>
+<button mat-raised-button color="accent" [disabled]="disabled" *ngIf="color === 'accent'">
+    <ng-container *ngTemplateOutlet="text"></ng-container>
+</button>
+<button mat-raised-button color="warn" [disabled]="disabled" *ngIf="color === 'warn'">
+    <ng-container *ngTemplateOutlet="text"></ng-container>
+</button>
+
+<ng-template #text>
+    <div class="btn-content">
+        <mat-icon class="icon" *ngIf="icon">{{icon}}</mat-icon>
+        <span class="text" [class.hidden-on-phone]="hideTextOnPhone"><ng-content select="[text]"></ng-content></span>
+    </div>
+</ng-template>

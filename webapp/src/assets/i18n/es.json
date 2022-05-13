@@ -1,0 +1,288 @@
+{
+  "SHARED": {
+    "SEARCH": "Buscar",
+    "NAME": "Nombre",
+    "SURNAME": "Apellidos",
+    "PHONE": "Teléfono",
+    "EMAIL": "Email",
+    "PASSWORD": "Contraseña",
+    "CREDITCARD": "Tarjeta de crédito",
+    "REQUEST": "Solicitud",
+    "REQUESTS": "Solicitudes",
+    "AUDIT": "Auditoría",
+    "AUDITS": "Auditorías",
+    "PROPERTY": "Propiedad",
+    "PROPERTYS": "Propiedades",
+    "INVOICE": "Factura",
+    "INVOICES": "Facturas",
+    "COMMENT": "Comentario",
+    "COMMENTS": "Comentarios",
+    "DAY": "Día",
+    "MONTH": "Mes",
+    "YEAR": "Año",
+    "PREFIX": "Prefijo",
+    "NOPREFIX": "No se ha encontrado el prefijo",
+    "STATUS": "Estado",
+    "YES": "Sí",
+    "NO": "No",
+    "TOPBAR": {
+      "SIGNIN": "Registrar",
+      "LOGIN": "Iniciar sesión",
+      "LOGOUT": "Cerrar sesión",
+      "REGISTER": "¿No tienes cuenta? Registrarse",
+      "PROFILE": "Perfil",
+      "ADMIN": "Panel de administracion"
+    },
+    "TEXT": "Texto",
+    "ATTACHMENT": "Adjunto",
+    "ATTACHMENTS": "Adjuntos",
+    "REGISTER": "Registrar",
+    "ACCEPT": "Aceptar",
+    "CREATE": "Crear",
+    "UPDATE": "Actualizar",
+    "SAVE": "Guardar cambios",
+    "EDIT": "Editar",
+    "CLOSE": "Cerrar",
+    "CANCEL": "Cancelar",
+    "REJECT": "Rechazar",
+    "EXIT": "Salir",
+    "USERS": {
+      "USER": "Usuario",
+      "ACTOR": "Actor",
+      "TENANT": "Inquilino",
+      "LESSOR": "Arrendador",
+      "ADMIN": "Administrador",
+      "AUDITOR": "Auditor"
+    }
+  },
+  "DIALOG": {
+    "DELETEPROPERTY": {
+      "TITLE": "Eliminar propiedad",
+      "TEXT": "¿Estás seguro de que desea eliminar la propiedad?",
+      "YES": "Sí, eliminar",
+      "NO": "No, cancelar"
+    },
+    "LOGIN": {
+      "EMPTY": "Introduzca su usuario y contraseña, por favor",
+      "ERROR": "El usuario o la contraseña son incorrectos"
+    },
+    "CANCELREQUEST": {
+      "TITLE": "Cancelar solicitud",
+      "TEXT": "¿Seguro que desea cancelar esta solicitud?",
+      "YES": "Rechazar",
+      "NO": "Cancelar"
+    },
+    "DELETESOCIAL": {
+      "TITLE": "Eliminar perfil",
+      "TEXT": "¿Está seguro de que desea eliminar este perfil?",
+      "YES": "Sí, eliminar",
+      "NO": "No, cancelar"
+    },
+    "SENDCOMMENT": {
+      "EMPTYTITLE": "El titulo no puede estar vacio",
+      "EMPTYTEXT": "El comentario no puede estar vacio"
+    },
+    "MAKEREQUEST": {
+      "EMPTYCHECK": "Por favor, seleccione una fecha de entrada y salida",
+      "SUCCESS": "Solicitud creada correctamente"
+    },
+    "ACCEPTREQUEST": {
+      "SUCCESS": "Solicitud aceptada correctamente"
+    },
+    "MAKEPROPERTY": {
+      "EMPTYNAME": "El nombre no puede estar vacio",
+      "EMPTYDESCRIPTION": "La descripción no puede estar vacia",
+      "EMPTYRATE": "El precio no puede estar vacio",
+      "EMPTYADDRESS": "La dirección no puede estar vacia",
+      "EMPTYATTRIBUTE": "Los atributos obligatorios no pueden estar vacios"
+    },
+    "CREATEATTRIBUTE": {
+      "TITLE": "Nombre del atributo",
+      "EMPTYNAME": "El nombre no puede estar vacio"
+    },
+    "MAKESOCIAL": {
+      "TITLE": "Seleccione la red social que desea agregar",
+      "SELECT": "Seleccione una red social",
+      "EMPTYSELECT": "Seleccione una red social, por favor",
+      "INSERTTITLE": "Introduzca los datos de su perfil",
+      "NICK": "Nick",
+      "URL": "Url",
+      "ADD": "Agregar",
+      "EMPTY": "Introduzca la url de su perfil y su nick, por favor"
+    },
+    "REGISTER": {
+      "EMPTYTYPE": "Por favor, seleccione un tipo de usuario",
+      "PWDMISMATCH": "Las contraseñas no coinciden",
+      "EMPTY": "Rellene todos los campos, por favor",
+      "REPEATPASSWORD": "Repita la contraseña"
+    },
+    "SWAL": {
+      "PROCESING": "Espere un momento, por favor.",
+      "UNESPECTEDERROR": "Error inesperado"
+    }
+  },
+  "HOME": {
+    "TITLE": "Propiedades disponibles"
+  },
+  "PROFILE": {
+    "PERSONAL": "Datos personales",
+    "IMGUPDATE": "Cambiar imagen",
+    "IMGNEW": "Establecer imagen"
+  },
+  "PROPERTY": {
+    "BASIC": "Datos básicos",
+    "NAME": "Nombre",
+    "DESCRIPTION": "Descripción",
+    "RATE": "Precio por día",
+    "ADDRESS": "Dirección",
+    "ATTRIBUTES": "Atributos",
+    "IMAGES": "Imágenes",
+    "ORDER": "Ordenar por popularidad",
+    "EMPTY": "No hay propiedades",
+    "STADISTICS": "Estadísticas"
+  },
+  "REQUEST": {
+    "ACCEPT": "Aceptar solicitud",
+    "CREDITCARDNOTICE": "Se requiere una tarjeta de credito para ingresar el pago de la solicitud",
+    "REUSE": "Reutilizar tarjeta de credito guardada",
+    "CREDITCARD": {
+      "NUMBER": "Numero",
+      "EXPIRACY": "Caducidad",
+      "CVV": "CVV"
+    },
+    "MAKE": "Crear solicitud",
+    "CHECKIN": "Fecha de ingreso",
+    "CHECKOUT": "Fecha de salida",
+    "TOTALDAYS": "Todas de dias",
+    "IMSMOKER": "Soy fumador",
+    "ISSMOKER": "Es fumador",
+    "CREDITCARDPAY": "Se requiere una tarjeta de credito para realizar el pago",
+    "STATE": {
+      "PENDING": "Pendiente",
+      "ACCEPTED": "Aceptada",
+      "DENIED": "Rechazada"
+    }
+  },
+  "AUDIT": {
+    "MAKE": "Crear auditoria",
+    "EMPTY": "No hay auditorías"
+  },
+  "INVOICE": {
+    "MAKE": "Solicitar factura",
+    "VIEW": "Ver factura",
+    "TOTAL": "Total a pagar",
+    "VAT": "VAT",
+    "CREATIONDATE": "Fecha de generación",
+    "COST": "Coste de la estancia",
+    "LESSORFEE": "Tarifa de arrendador",
+    "TENANTFEE": "Tarifa de inquilino",
+    "PDF": "Factura en PDF"
+  },
+  "COMMENT": {
+    "MAKE": "Publicar comentario",
+    "TITLE": "Título",
+    "COMMENT": "Comentario",
+    "SEND": "Enviar"
+  },
+  "SOCIAL": {
+    "SOCIAL": "Redes sociales",
+    "EMPTY": "Sin redes sociales",
+    "NICK": "Nick",
+    "URL": "Url"
+  },
+  "ADMIN": {
+    "AUDITOR": {
+      "REGISTER": "Registrar auditor",
+      "COMPANY": "Empresa"
+    },
+    "ATTRIBUTES": "Atributos de las propiedades",
+    "SYSVARS": "Variables del sistema",
+    "AUDITORS": "Lista de auditores",
+    "DASHBOARD": {
+      "GENERAL": "Resumen general",
+      "LESSORS": "Resumen por lessors",
+      "JPQLTEST": "Prueba de JPQL",
+      "JPQLEXECUTE": "Ejecutar",
+      "JPQLQUERY": "Consulta",
+      "AVG_ACCEPTED_REQUESTS_PER_LESSOR": "Promedio de solicitudes aceptadas por arrendador",
+      "AVG_DENIED_REQUESTS_PER_LESSOR": "Promedio de solicitudes denegadas por arrendador",
+      "AVG_ACCEPTED_REQUESTS_PER_TENANT": "Promedio de solicitudes aceptadas por inquilino",
+      "AVG_DENIED_REQUESTS_PER_TENANT": "Promedio de solicitudes denegadas por inquilino",
+      "LESSORS_WITH_MORE_APPROVED_REQUESTS": "Arrendadores que hayan aprobado más solicitudes",
+      "LESSORS_WITH_MORE_DENIED_REQUESTS": "Arrendadores que hayan denegado más solicitudes",
+      "LESSORS_WITH_MORE_PENDING_REQUESTS": "Arrendadores que tengan más solicitudes pendientes",
+      "TENANTS_WITH_MORE_APPROVED_REQUESTS": "Inquilinos que tienen más solicitudes aprobadas",
+      "TENANTS_WITH_MORE_DENIED_REQUESTS": "Inquilinos que tienen más solicitudes denegadas",
+      "TENANTS_WITH_MORE_PENDING_REQUESTS": "Inquilinos que tienen más solicitudes pendientes",
+      "LESSORS_WITH_MORE_APPROVED_REQUESTS_RATIO": "Inquilinos cuya relación de solicitud/es solicitada/s aprobada/s sea la máxima",
+      "LESSORS_WITH_LESS_APPROVED_REQUESTS_RATIO": "Inquilinos cuya relación de solicitud/es solicitada/s aprobada/s sea la mínima",
+      "TENANTS_WITH_MORE_APPROVED_REQUESTS_RATIO": "Arrendador/es cuya relación de solicitud/es solicitada/s aprobada/s sea máxima",
+      "TENANTS_WITH_LESS_APPROVED_REQUESTS_RATIO": "Arrendador/es cuya relación de solicitud/es solicitada/s aprobada/s sea mínima",
+      "AVG_AUDITS_PER_PROPERTY": "Promedio de auditorías que tienen las propiedades",
+      "PROPERTIES_WITH_MORE_AUDITS": "Número máximo de auditorías que tienen las propiedades",
+      "PROPERTIES_WITH_LESS_AUDITS": "Número mínimo de auditorías que tienen las propiedades",
+      "AVG_SOCIAL_IDENTITIES_PER_ACTOR": "Promedio de identidades sociales por actor",
+      "ACTOR_WITH_MORE_SOCIAL_IDENTITIES": "Número máximo de identidades sociales por actor",
+      "ACTOR_WITH_LESS_SOCIAL_IDENTITIES": "Número mínimo de identidades sociales por actor",
+      "AVG_INVOICES_PER_TENANT": "Promedio de facturas emitidas a los locatarios",
+      "TENANT_WITH_MORE_INVOICES": "Número máximo de facturas emitidas a los locatarios",
+      "TENANT_WITH_LESS_INVOICES": "Número mínimo de facturas emitidas a los locatarios",
+      "TOTAL_MONEY_DUE_TO_SYSTEM": "El monto total de dinero adeudado en las facturas emitidas por el sistema",
+      "AVG_REQUESTS_PER_PROPERTY_WITH_AUDITS": "Promedio de solicitudes de propiedades que tienen al menos un registro de auditoría",
+      "AVG_REQUESTS_PER_PROPERTY_WITHOUT_AUDITS": "Promedio de solicitudes de propiedades que no tienen ninguna auditoría",
+      "PROPERTIES_WITH_AUDIT_COUNT": "Sus propiedades ordenadas según el número de auditorías que tienen",
+      "PROPERTIES_WITH_REQUEST_COUNT": "Sus propiedades ordenadas según el número de solicitudes que tienen",
+      "PROPERTIES_WITH_APPROVED_REQUEST_COUNT": "Sus propiedades ordenadas según el número de solicitudes aprobadas que tienen",
+      "PROPERTIES_WITH_DENIED_REQUEST_COUNT": "Sus propiedades ordenadas según el número de solicitudes denegadas que tienen",
+      "PROPERTIES_WITH_PENDING_REQUEST_COUNT": "Sus propiedades ordenadas según el número de solicitudes pendientes que tienen"
+    }
+  },
+  "EXCEPTIONS": {
+    "0": "No puedes modificar otros usuarios",
+    "1": "No puedes acceder a las auditorias de otro usuario",
+    "2": "No puedes accerder a las solicitudes de otro usuario",
+    "3": "No puedes modificar las propiedades de otro usuario",
+    "4": "No puedes eliminar las propiedades de otro usuario",
+    "5": "No puedes acceder a las solicitudes de otro usuario",
+    "6": "No puedes aceptar las solicitudes de otro usuario",
+    "7": "No puesdes denegar las solicitudes de otro usuario",
+    "8": "No puedes modificar las redes sociales de otro usuario",
+    "9": "Usuario no encontrado",
+    "10": "Usuario no encontrado",
+    "11": "No se permiten campos vacios",
+    "12": "Telefono invalido",
+    "13": "No se ha encontrado al usuario",
+    "14": "No se ha podido procesar la imagen",
+    "15": "Usuario no encontrado",
+    "16": "Ya tienes una auditoria para esta propiedad",
+    "17": "Auditoria no encontrada",
+    "18": "Esta auditoria no es un borrador",
+    "19": "Campos incorrectos",
+    "20": "Adjunto no encontrado",
+    "21": "No puedes borrar adjuntos de otras auditorias",
+    "22": "El Email ya esta en uso",
+    "23": "Usuario no encontrado",
+    "24": "No puedes acceder a este auditor",
+    "25": "Campos del comentario incorrectos",
+    "26": "No puedes comentar en otro arrendador",
+    "27": "No puedes comentar en otro arrendatario",
+    "28": "No puedes publicar un comentario en un arrendatario que no ha solicitado ninguna de tus propiedades",
+    "29": "No puedes publicar un comentario en un arrendador al cual no le has solicitado ninguna propiedad",
+    "30": "No se ha podido leer el archivo de configuración",
+    "31": "Esta solicitud no tiene factura",
+    "32": "Tarjeta de credito no valida",
+    "33": "Atributo no encontrado",
+    "34": "No se puede borrar un atributo del sistema",
+    "35": "Propiedad no encontrada",
+    "36": "Campos de la solicitud no validos",
+    "37": "Se ha superado el limite de imagenes por propiedad",
+    "38": "Faltan parametros obligatorios",
+    "39": "La salida no puede ser anterior a la entrada",
+    "40": "La entrada y la salida no pueden ser el mismo dia",
+    "41": "Esta solicitud no está pendiente",
+    "42": "Solicitud no encontrada",
+    "43": "Red social no encontrada",
+    "44": "Parametro del sistema no encontrado",
+    "45": "Usuario no encontrado"
+  }
+}

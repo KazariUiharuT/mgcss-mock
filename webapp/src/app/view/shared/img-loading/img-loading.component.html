@@ -1,0 +1,4 @@
+<div class="loading" (resized)="onResize()" #loadingDiv>
+    <img class="loaded-img" [src]="src | cacheBreak" (load)="onLoad()" [hidden]="!loaded">
+    <mat-spinner *ngIf="!loaded"></mat-spinner>
+</div>

@@ -1,0 +1,15 @@
+.btn-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    align-items: center;
+}
+
+.icon{
+    margin: 5px 5px 5px 0;
+}
+.text{
+    flex:1;
+    text-align: center;
+}

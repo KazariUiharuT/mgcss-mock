@@ -1,0 +1,11 @@
+.content-wapper {
+    margin-bottom: 2rem;
+}
+
+.input-row {
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.input-row > * {
+    min-width: 350px;
+}

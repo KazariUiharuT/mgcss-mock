@@ -1,0 +1,17 @@
+<div class="audit-list">
+    <div class="audit" *ngFor="let audit of audits" (click)="onOpen(audit)">
+        <div>
+            <div class="title">{{audit.property.name}}</div>
+            <div>{{audit.text | charLimit}}</div>
+            <div class="date">{{audit.date | date:'dd/MM/yyyy'}}</div>
+        </div>
+        <div *ngIf="mySelf" class="btn-div">
+            <button mat-icon-button color="accent" (click)="onEdit(audit, $event)" [disabled]="!audit.draft">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="onDelete(audit, $event)" [disabled]="!audit.draft">
+                <mat-icon>delete_forever</mat-icon>
+            </button>
+        </div>
+    </div>
+</div>

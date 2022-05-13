@@ -1,0 +1,11 @@
+<div class="filter-div"  *ngIf="properties.length > 0">
+    <mat-form-field appearance="outline">
+        <mat-label>{{'SHARED.SEARCH' | translate}}</mat-label>
+        <input matInput [(ngModel)]="key">
+    </mat-form-field>
+    <mat-slide-toggle (change)="onSortProperties($event)">{{'PROPERTY.ORDER' | translate}}</mat-slide-toggle>
+</div>
+<div class="property-list">
+    <property-list-item *ngFor="let property of filteredProperties" [property]="property" (onDeleteProperty)="onDelete($event)"></property-list-item>
+    <empty-message *ngIf="filteredProperties.length === 0">{{'PROPERTY.EMPTY' | translate}}</empty-message>
+</div>

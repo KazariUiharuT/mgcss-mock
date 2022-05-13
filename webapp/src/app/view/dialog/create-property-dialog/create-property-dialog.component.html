@@ -1,0 +1,61 @@
+<h1>{{'SHARED.'+(propertyId?'UPDATE':'REGISTER') | translate}} {{'SHARED.PROPERTY' | translate | lowercase}}</h1>
+<div class="container">
+    <fieldset>
+        <legend>{{'PROPERTY.BASIC' | translate}}</legend>
+        <div class="input-row">
+            <mat-form-field appearance="outline">
+                <mat-label>{{'PROPERTY.NAME' | translate}}*</mat-label>
+                <input matInput [(ngModel)]="property.name">
+            </mat-form-field>
+        </div>
+        <div class="input-row">
+            <mat-form-field appearance="outline">
+                <mat-label>{{'PROPERTY.DESCRIPTION' | translate}}*</mat-label>
+                <textarea matInput [(ngModel)]="property.description"></textarea>
+            </mat-form-field>
+        </div>
+        <div class="input-row">
+            <mat-form-field appearance="outline">
+                <mat-label>{{'PROPERTY.RATE' | translate}}*</mat-label>
+                <input matInput type="number" [(ngModel)]="property.rate">
+            </mat-form-field>
+        </div>
+        <div class="input-row">
+            <mat-form-field appearance="outline">
+                <mat-label>{{'PROPERTY.ADDRESS' | translate}}*</mat-label>
+                <input matInput [(ngModel)]="property.address">
+            </mat-form-field>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>{{'PROPERTY.ATTRIBUTES' | translate}}</legend>
+        <div class="input-row" *ngFor="let attribute of attributes">
+            <mat-form-field appearance="outline">
+                <mat-label>{{attribute.name}}{{attribute.obligatory?'*':''}}</mat-label>
+                <input matInput [(ngModel)]="attribute.value">
+            </mat-form-field>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>
+            <span>{{'PROPERTY.IMAGES' | translate}}</span>
+            <button mat-mini-fab color="accent" (click)="addPicture()">
+                <mat-icon>add</mat-icon>
+            </button>
+        </legend>
+        <div class="picture-list">
+            <div class="picture" *ngFor="let picture of property.pictures; let i = index">
+                <img [src]="picture">
+                <button mat-icon-button color="warn" (click)="removePicture(i)">
+                    <mat-icon>delete_forever</mat-icon>
+                </button>
+            </div>
+        </div>
+    </fieldset>
+</div>
+<div class="btn-div">
+    <button mat-button color="warn" (click)="onCancel()">{{'SHARED.CANCEL' | translate}}</button>
+    <button mat-raised-button color="accent" (click)="onCreate()">{{'SHARED.'+(propertyId?'UPDATE':'REGISTER') | translate}}</button>
+</div>

@@ -1,0 +1,25 @@
+<div class="content-wapper">
+    <div class="container column-phone-row-desktop">
+        <div class="main-col">
+            <mat-tab-group>
+                <mat-tab label="{{'SHARED.TOPBAR.PROFILE' | translate}}">
+                    <profile-data [actor]="actor" [mySelf]="mySelf" (onEdit)="editing=true" *ngIf="!editing"></profile-data>
+                    <profile-data-edit [actor]="actor" [socials]="socials" *ngIf="editing"></profile-data-edit>
+                </mat-tab>
+                <mat-tab label="{{'SHARED.PROPERTYS' | translate}}" *ngIf="actor.type==='lessor'">
+                    <profile-properties [actor]="actor" [mySelf]="mySelf"></profile-properties>
+                </mat-tab>
+                <mat-tab label="{{'SHARED.REQUESTS' | translate}}" *ngIf="mySelf && (actor.type==='tenant' || actor.type==='lessor')">
+                    <profile-requests></profile-requests>
+                </mat-tab>
+                <mat-tab label="{{'SHARED.AUDITS' | translate}}" *ngIf="actor.type==='auditor'">
+                    <profile-audits [actor]="actor" [mySelf]="mySelf"></profile-audits>
+                </mat-tab>
+              </mat-tab-group>
+        </div>
+        <div class="side-col">
+            <actor-info [actor]="actor"></actor-info>
+            <social-info [socials]="socials"></social-info>
+        </div>
+    </div>
+</div>

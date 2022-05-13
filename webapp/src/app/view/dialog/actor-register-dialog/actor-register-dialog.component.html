@@ -1,0 +1,46 @@
+<div class="container">
+    <fieldset>
+        <legend>{{'SHARED.TOPBAR.SIGNIN' | translate}}</legend>
+        <div class="input-row">
+            <mat-form-field appearance="outline">
+                <mat-label>{{'SHARED.NAME' | translate}}*</mat-label>
+                <input matInput [(ngModel)]="actor.name">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>{{'SHARED.SURNAME' | translate}}*</mat-label>
+                <input matInput [(ngModel)]="actor.surname">
+            </mat-form-field>
+        </div>
+        <div class="input-row">
+            <mat-form-field appearance="outline">
+                <mat-label>{{'SHARED.EMAIL' | translate}}*</mat-label>
+                <input matInput [(ngModel)]="actor.email">
+            </mat-form-field>
+        </div>
+        <div class="input-row">
+            <mat-form-field appearance="outline">
+                <mat-label>{{'SHARED.PASSWORD' | translate}}*</mat-label>
+                <input matInput type="password" [(ngModel)]="pwd1">
+            </mat-form-field>
+        </div>
+        <div class="input-row">
+            <mat-form-field appearance="outline">
+                <mat-label>{{'DIALOG.REGISTER.REPEATPASSWORD' | translate}}*</mat-label>
+                <input matInput type="password" [(ngModel)]="pwd2">
+            </mat-form-field>
+        </div>
+        <div class="input-row">
+            <div>
+                <p>Tipo de usuario</p>
+                <mat-radio-group [(ngModel)]="type" style="display: flex;justify-content: space-evenly;">
+                    <mat-radio-button value="lessor">{{'SHARED.USERS.LESSOR' | translate}}</mat-radio-button>
+                    <mat-radio-button value="tenant">{{'SHARED.USERS.TENANT' | translate}}</mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+    </fieldset>
+</div>
+<div class="btn-div">
+    <button mat-button color="warn" (click)="onCancel()">{{'SHARED.CANCEL' | translate}}</button>
+    <button mat-raised-button color="accent" (click)="onRegister()">{{'SHARED.TOPBAR.SIGNIN' | translate}}</button>
+</div>

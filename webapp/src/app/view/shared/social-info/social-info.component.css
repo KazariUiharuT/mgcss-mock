@@ -1,0 +1,37 @@
+.box-wrapper {
+    overflow: hidden;
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+}
+
+.social-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.social{
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    padding: 5px;
+    background-color: lightblue;
+    border-radius: 0.5rem;
+    border: 1px solid lightgrey;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.social:hover {
+    transform: scale(1.05);
+}
+.social .social-center {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-right: 5px;
+}

@@ -1,0 +1,9 @@
+.reuse-div {
+    margin: 10px 0;
+    text-align: end;
+}
+.btn-div {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
