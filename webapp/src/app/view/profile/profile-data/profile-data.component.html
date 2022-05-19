@@ -28,6 +28,7 @@
                 <div class="date">{{comment.date | date}}</div>
             </div>
         </div>
+        <empty-message>{{'COMMENT.EMPTY' | translate}}</empty-message>
     </div>
     <div *ngIf="myTipe === 'lessor' || myTipe === 'tenant'" class="send-comment">
         <h3>{{'COMMENT.MAKE' | translate}}</h3>

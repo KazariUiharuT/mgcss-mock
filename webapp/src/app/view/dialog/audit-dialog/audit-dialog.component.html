@@ -1,8 +1,11 @@
-<div class="author">
+<div class="author" (click)="goToProfile()">
     <div class="profile-image-container"><img-loading [src]="audit.author.picture??'assets/placeholder_profile.png'"></img-loading></div>
-    <div>
+    <div class="center">
         <div class="description">{{audit.author.name}} {{audit.author.surname}}</div>
         <div class="company">{{audit.author.company}}</div>
+    </div>
+    <div class="navigation-icon">
+        <mat-icon>navigate_next</mat-icon>
     </div>
 </div>
 <p>{{audit.text}}</p>

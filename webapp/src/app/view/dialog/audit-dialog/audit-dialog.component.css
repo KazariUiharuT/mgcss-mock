@@ -9,6 +9,19 @@
     transition: 0.2s;
     margin-bottom: 10px;
     gap: 10px;
+    cursor: pointer;
+    animation: 0.2s;
+}
+.author:hover{
+    transform: scale(1.05);
+}
+.author .center {
+    flex: 1;
+}
+.author .navigation-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .company {
     color: gray;

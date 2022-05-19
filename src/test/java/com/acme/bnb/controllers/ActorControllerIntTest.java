@@ -22,8 +22,8 @@ public class ActorControllerIntTest {
     
     @Test
     void get() throws Exception{
-        RequestBuilder request = MockMvcRequestBuilders.get("/api/v1/actor/11");
+        RequestBuilder request = MockMvcRequestBuilders.get("/api/v1/actor/12");
         MvcResult result = mvc.perform(request).andReturn();
-        Assertions.assertEquals("{\"id\":11,\"name\":\"B0vE2\",\"surname\":\"b0ve2\",\"email\":\"b0ve2@b0ve.com\",\"phone\":{\"number\":\"192168102\",\"country\":\"ESP\",\"prefix\":\"+34\"},\"picture\":null,\"stars\":3.0,\"type\":\"lessor\"}", result.getResponse().getContentAsString());
+        Assertions.assertEquals("{\"id\":12,\"name\":\"Lessor 1\",\"surname\":\"B0vE\",\"email\":\"lessor1@acme.com\",\"phone\":{\"number\":\"192168102\",\"country\":\"ESP\",\"prefix\":\"+34\"},\"picture\":null,\"stars\":3.0,\"type\":\"lessor\"}", result.getResponse().getContentAsString());
     }
 }

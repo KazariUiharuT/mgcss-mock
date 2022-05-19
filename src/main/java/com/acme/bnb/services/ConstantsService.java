@@ -1,6 +1,5 @@
 package com.acme.bnb.services;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -27,7 +26,7 @@ public class ConstantsService {
             @Value(value = "classpath:invoice-template.pdf") Resource invoiceTemplate
     ){
         this.invoiceTemplate = invoiceTemplate;
-        try ( InputStream input = new FileInputStream(properties.getFile())) {
+        try ( InputStream input = properties.getInputStream()) {
             Properties prop = new Properties();
             prop.load(input);
 
@@ -35,7 +34,7 @@ public class ConstantsService {
             APP_SECRET = prop.getProperty("security.app-secret");
             B0VE_BLOB_SERVICE_API_KEY = prop.getProperty("b0ve-blob-service.api-key");
         } catch (IOException ex) {
-            throw new IllegalStateException("Could not read installation constants config file");
+            throw new IllegalStateException("Could not read installation constants config file: "+ex.getMessage());
         }
     }
 }

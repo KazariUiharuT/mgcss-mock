@@ -182,7 +182,8 @@
     "MAKE": "Publicar comentario",
     "TITLE": "Título",
     "COMMENT": "Comentario",
-    "SEND": "Enviar"
+    "SEND": "Enviar",
+    "EMPTY": "Sin comentarios"
   },
   "SOCIAL": {
     "SOCIAL": "Redes sociales",

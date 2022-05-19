@@ -43,7 +43,7 @@
                 <div><b>{{'SHARED.REQUESTS' | translate}}: </b>{{property.nrequests | number}}</div>
                 <div><b>{{'SHARED.AUDITS' | translate}}: </b>{{property.naudits | number}}</div>
             </div>
-            <div class="box-wrapper">
+            <div class="box-wrapper" *ngIf="userType !== 'guest'">
                 <div class="title">{{'SHARED.AUDITS' | translate}}</div>
                 <mat-divider class="divider"></mat-divider>
                 <div class="audit" *ngFor="let audit of audits" (click)="onOpenAudit(audit)">

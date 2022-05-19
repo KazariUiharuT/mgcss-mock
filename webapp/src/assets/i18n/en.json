@@ -182,7 +182,8 @@
       "MAKE": "Send comment",
       "TITLE": "Title",
       "COMMENT": "Comment",
-      "SEND": "Send"
+      "SEND": "Send",
+      "EMPTY": "No comments"
     },
     "SOCIAL": {
       "SOCIAL": "Social identities",
